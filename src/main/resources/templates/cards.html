@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="https://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<div class="card" th:fragment="cards">
+<body  th:fragment="cards">
+<div class="card">
     <div class="card-image">
-        <figure class="image is-96x96">
+        <figure class="image ">
             <img
                     src="https://bulma.io/assets/images/placeholders/96x96.png"
                     alt="Placeholder image"
@@ -25,16 +25,20 @@
                 </figure>
             </div>
             <div class="media-content">
-                <p class="title is-4">John Smith</p>
-                <p class="subtitle is-6">@johnsmith</p>
+                <p class="title is-4">João da Silva</p>
+                <p class="subtitle is-6">joao.silva@exemplo.com</p>
             </div>
         </div>
 
         <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-            iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
+            Período do Extrato: Data de início e fim (ex: 01 Nov 2025 a 30 Nov 2025).
+            Saldo Inicial: O valor disponível no início do período.
+            Histórico de Transações: Uma lista detalhada de todas as entradas (créditos/depósitos) e saídas (débitos/pagamentos/transferências).
+            Detalhes da Transação: Data, descrição (ex: Pagamento de serviços, Transferência recebida), valor e o saldo após cada movimento.
+            Saldo Final: O valor total no final do período
+            . <a>@bulmaio</a>. <a href="#">#css</a>
             <a href="#">#responsive</a>
-            <br />
+            <br/>
             <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
         </div>
     </div>

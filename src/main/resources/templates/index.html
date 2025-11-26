@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="https://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>Kwanza Zap</title>
 </head>
 <body>
-<nav th:replace="~{navbar :: navbar}"></nav>
-<br>
-<br>
-<br>
-<div class="columns  is-centered">
-    <div class="column is-two-thirds ">
-        <section class="hero  is-danger">
-            <br>
-            <br>
-           <div class="hero-body">
-                <p class="title"> Fintech - Kwanza zap</p>
-                <p class="subtitle">Seja bem-vindo(a)! Na Kwanza Zap, você encontra as melhores soluções financeiras. Confere as nossas ofertas especiais de boas-vindas!</p>
-            </div>
-        </section>
-    </div>
+<div data-theme="dark">
+    <nav th:replace="~{navbar :: navbar}"></nav>
+    <br>
+    <br>
+    <br>
+    <div class="columns  is-centered">
+        <div class="column is-two-thirds ">
+            <section class="hero  is-danger">
+                <br>
+                <br>
+                <div class="hero-body">
+                    <p class="title"> Fintech - Kwanza zap</p>
+                    <p class="subtitle">Seja bem-vindo(a)! Na Kwanza Zap, você encontra as melhores soluções financeiras. Confere as nossas ofertas especiais de boas-vindas!</p>
+                </div>
+            </section>
+        </div>
 
-</div>
-<br>
-<br>
-<div class="columns is-centered">
-<div class="">
-    <card th:replace="~{cards :: cards}"> </card>
-</div>
+    </div>
+    <br>
+    <br>
+    <div class="columns is-centered">
+        <div class="column is-one-fifth">
+            <card th:replace="~{cards :: cards}"> </card>
+        </div>
+    </div>
 </div>
 </body>
 </html>
