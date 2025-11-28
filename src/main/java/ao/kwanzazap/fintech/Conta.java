@@ -1,9 +1,6 @@
 package ao.kwanzazap.fintech;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,10 +13,10 @@ import lombok.ToString;
 @NoArgsConstructor
 
 
-
-
 public class Conta {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Integer numero_de_conta;
     private Integer saldo;
     private String nome_do_titular;
