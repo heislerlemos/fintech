@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @Getter
 @ToString
 @Entity
@@ -26,5 +28,6 @@ public class Conta {
     private Movimentos movimentos;
     @Enumerated(EnumType.STRING)
     private Servicos servicos;
+
 
 }

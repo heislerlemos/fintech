@@ -9,13 +9,40 @@
 
 
 
-    <nav th:replace="~{navbar :: navbar}"></nav>
-    <table>
-        <tr th:each="conta: ${contas}">
-            <td> teste</td>
-            <td th:text="${conta.id}"></td>
+<nav th:replace="~{navbar :: navbar}"></nav>
+<div class="columns is-multiline  is-centered">
+    <div class="column is-two-thirds ">
+        <section class="hero  is-light">
+            <br>
+            <br>
+            <div class="hero-body " align="center" >
+                <img th:src="@{/images/logo.jpeg}" width="220" >
+                <p class="title"> Fintech - Kwanza zap  <p/>
+                <p class="subtitle">Seja bem-vindo(a)! Na Kwanza Zap, você encontra as melhores soluções financeiras.  Confere as nossas ofertas especiais de boas-vindas!<hr></p>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div align="center">
+    <table class="table">
+        <thead>
+        <tr>
+            <th> Id</th>
+            <th> Numero de conta </th>
+            <th> Saldo </th>
+            <th> Nome do titular  </th>
+            <th> Iban </th>
+            <th>Pin </th>
+            <th> Movimentos </th>
+            <th> Serviços </th>
+        </tr>
+        </thead>
+
+        <tr th:each="conta : ${contas}">
+            <td th:text="${conta.id}"> </td>
             <td th:text="${conta.numero_de_conta}"></td>
-            <td th:text="${conta.saldo}"></td>
+            <td th:text="${conta.saldo}">Kz</td>
             <td th:text="${conta.nome_do_titular}"></td>
             <td th:text="${conta.iban}"></td>
             <td th:text="${conta.pin}"></td>
@@ -23,22 +50,6 @@
             <td th:text="${conta.servicos}"></td>
         </tr>
     </table>
-    <div class="columns  is-centered">
-        <div class="column is-two-thirds ">
-            <section class="hero  is-danger">
-                <br>
-                <br>
-                <div class="hero-body">
-                    <p class="title"> Fintech - Kwanza zap</p>
-                    <p class="subtitle">Seja bem-vindo(a)! Na Kwanza Zap, você encontra as melhores soluções financeiras. Confere as nossas ofertas especiais de boas-vindas!</p>
-                </div>
-            </section>
-        </div>
-
-    </div>
-    <br>
-    <br>
-    <h1 th:text="${contas}"> </h1>
-
+</div>
 </body>
 </html>
