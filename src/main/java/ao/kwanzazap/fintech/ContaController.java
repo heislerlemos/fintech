@@ -4,14 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RequestMethod;
-import ao.kwanzazap.fintech.Conta;
+import org.springframework.web.bind.annotation.*;
 
 
- @Controller
+@Controller
 
 public class ContaController
 {
@@ -24,8 +20,6 @@ public class ContaController
         return contaRepository.findAll((Sort.by(Sort.Direction.DESC, "id")));
 
     }
-
-
 
     @ResponseBody
     @Transactional
@@ -40,5 +34,14 @@ public class ContaController
     @RequestMapping(path = "/contas", method = RequestMethod.PUT)
     public void atualizar (@RequestBody Conta conta){
         contaRepository.save(conta);
+    }
+
+
+    @ResponseBody
+    @Transactional
+    @RequestMapping(path = "/contas/{id}", method = RequestMethod.DELETE)
+    public void apagar (@PathVariable Long id) {
+        contaRepository.deleteById(id);
+
     }
 }
