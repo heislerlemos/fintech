@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="https://www.thymeleaf.org" >
+<html  xmlns:th="https://www.thymeleaf.org" >
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>Kwanza Zap</title>
 </head>
 <body>
-<div data-theme="dark">
+
+
+
     <nav th:replace="~{navbar :: navbar}"></nav>
-    <br>
-    <br>
-    <br>
+    <table>
+        <tr th:each="conta: ${contas}">
+            <td> teste</td>
+            <td th:text="${conta.id}"></td>
+            <td th:text="${conta.numero_de_conta}"></td>
+            <td th:text="${conta.saldo}"></td>
+            <td th:text="${conta.nome_do_titular}"></td>
+            <td th:text="${conta.iban}"></td>
+            <td th:text="${conta.pin}"></td>
+            <td th:text="${conta.movimentos}"></td>
+            <td th:text="${conta.servicos}"></td>
+        </tr>
+    </table>
     <div class="columns  is-centered">
         <div class="column is-two-thirds ">
             <section class="hero  is-danger">
@@ -26,11 +38,7 @@
     </div>
     <br>
     <br>
-    <div class="columns is-centered">
-        <div class="column is-one-fifth">
-            <card th:replace="~{cards :: cards}"> </card>
-        </div>
-    </div>
-</div>
+    <h1 th:text="${contas}"> </h1>
+
 </body>
 </html>

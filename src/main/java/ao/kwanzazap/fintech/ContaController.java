@@ -16,10 +16,13 @@ public class ContaController
 
     @ResponseBody
     @RequestMapping("/contas")
+
     public List<Conta> contar (){
         return contaRepository.findAll((Sort.by(Sort.Direction.DESC, "id")));
 
     }
+
+
 
     @ResponseBody
     @Transactional
