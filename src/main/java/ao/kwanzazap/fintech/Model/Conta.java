@@ -1,18 +1,16 @@
-package ao.kwanzazap.fintech;
-
+package ao.kwanzazap.fintech.Model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.io.Serializable;
-
 @Getter
 @ToString
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+
 
 
 public class Conta {

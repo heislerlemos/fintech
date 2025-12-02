@@ -1,9 +1,12 @@
-package ao.kwanzazap.fintech;
+package ao.kwanzazap.fintech.Interface;
+import ao.kwanzazap.fintech.Model.Conta;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
+
 public interface ContaRepository extends JpaRepository<Conta, Long>{
+
 
 }
 
