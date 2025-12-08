@@ -1,6 +1,8 @@
 package ao.kwanzazap.fintech.Controller;
 import java.util.List;
+import java.util.Map;
 
+import ao.kwanzazap.fintech.Service.ContaServico;
 import ao.kwanzazap.fintech.Model.Conta;
 import ao.kwanzazap.fintech.Interface.ContaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ public class ContaController
 {
     @Autowired
     private ContaRepository contaRepository;
+    @Autowired
+    private ContaServico contaServico;
 
     // HTML TEMPLATE VIEW
     @GetMapping("/")
@@ -32,6 +36,10 @@ public class ContaController
         return contaRepository.findAll();
     }
 
+   @GetMapping("/contas/{id}")
+    public Conta getAccount(@PathVariable Long id) {
+        return contaServico.getConta(id).orElseThrow(() -> new RuntimeException("Conta não encontrada"));
+    }
 
 
     @ResponseBody
@@ -41,6 +49,20 @@ public class ContaController
         contaRepository.save(conta);
 
     }
+
+
+    @PostMapping("/contas/{id}/deposito")
+    public Conta deposito (@PathVariable Long id, @RequestBody Map<String, Double> request) {
+        Double valor = request.get("valor");
+        return contaServico.deposito(id,valor);
+    }
+
+    @PostMapping("/contas/{id}/levantamento")
+    public Conta levantamento(@PathVariable Long id, @RequestBody Map<String, Double> request) {
+        Double valor = request.get("valor");
+        return contaServico.levantamento(id, valor);
+    }
+
 
     @ResponseBody
     @Transactional

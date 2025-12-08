@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import lombok.Setter;
 
 @Getter
+@Setter
 @ToString
 @Entity
 @AllArgsConstructor
@@ -18,7 +20,7 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Integer numero_de_conta;
-    private Integer saldo;
+    private Double  balanco;
     private String nome_do_titular;
     private String iban;
     private Integer pin;
