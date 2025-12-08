@@ -51,13 +51,14 @@ public class ContaController
 
     }
 
-
+    @ResponseBody
     @PostMapping("/contas/{id}/deposito")
     public Conta deposito (@PathVariable Long id, @RequestBody Map<String, Double> request) {
         Double valor = request.get("valor");
         return contaServico.deposito(id,valor);
     }
 
+    @ResponseBody
     @PostMapping("/contas/{id}/levantamento")
     public Conta levantamento(@PathVariable Long id, @RequestBody Map<String, Double> request) {
         Double valor = request.get("valor");
