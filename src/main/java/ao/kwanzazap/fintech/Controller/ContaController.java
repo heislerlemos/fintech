@@ -36,6 +36,7 @@ public class ContaController
         return contaRepository.findAll();
     }
 
+   @ResponseBody
    @GetMapping("/contas/{id}")
     public Conta getAccount(@PathVariable Long id) {
         return contaServico.getConta(id).orElseThrow(() -> new RuntimeException("Conta não encontrada"));
