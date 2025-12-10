@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @Controller
 
 public class ContaController
@@ -27,7 +29,6 @@ public class ContaController
         model.addAttribute("contas", contaRepository.findAll((Sort.by(Sort.Direction.DESC, "id"))));
         return "index";
     }
-
 
     // JSON VIEW
     @ResponseBody
@@ -60,10 +61,12 @@ public class ContaController
 
     @ResponseBody
     @PostMapping("/contas/{id}/levantamento")
+
     public Conta levantamento(@PathVariable Long id, @RequestBody Map<String, Double> request) {
         Double valor = request.get("valor");
         return contaServico.levantamento(id, valor);
     }
+
 
 
     @ResponseBody

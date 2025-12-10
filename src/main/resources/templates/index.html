@@ -32,14 +32,7 @@
         <div class="column is-2" th:each="conta : ${contas}">
 
             <div class="card" >
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img
-                                src="https://bulma.io/assets/images/placeholders/1280x960.png"
-                                alt="Placeholder image"
-                        />
-                    </figure>
-                </div>
+
                 <div class="card-content">
                     <div class="media">
                         <div class="media-left">
@@ -68,15 +61,30 @@
                             <p> Balanço : </p>
                             <p th:text="${conta.balanco}" style="color:green"></p> KZ
                             </div>
-                            <div class="AdjustMov">
-
-                            </div>
                         </div>
                     </div>
 
                     <div class="content">
+                        <div class="AdjustMov">
+                            <p> Pin :  </p>
+                            <p th:text="${conta.pin}"></p>
+
+                        </div>
+                        <div class="AdjustMov">
+                            <p> Movimentos: </p>
+                            <p th:text="${conta.movimentos}"></p>
+                        </div>
+
+                        <div class="AdjustMov">
+                            <p> Serviços : </p>
+                            <p  th:text="${conta.servicos}"></p>
+                        </div>
 
                     </div>
+                    <footer class="card-footer">
+                        <a  th:ref="@{/contas/levantamento/{id} (id=${conta.id})}"  class="card-footer-item">Levantamento</a>
+                        <a href="#" class="card-footer-item">Deposito</a>
+                    </footer>
                 </div>
             </div>
         </div>
