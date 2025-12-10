@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/main.css">
     <title>Kwanza Zap</title>
 </head>
 <body>
@@ -25,31 +26,59 @@
 </div>
 
 <div align="center">
-    <table class="table">
-        <thead>
-        <tr>
-            <th> Id</th>
-            <th> Numero de conta </th>
-            <th> Saldo </th>
-            <th> Nome do titular  </th>
-            <th> Iban </th>
-            <th>Pin </th>
-            <th> Movimentos </th>
-            <th> Serviços </th>
-        </tr>
-        </thead>
+    <div class="columns is-multiline is-centered"  >
+        <div class="column is-2" th:each="conta : ${contas}">
 
-        <tr th:each="conta : ${contas}">
-            <td th:text="${conta.id}"> </td>
-            <td th:text="${conta.numero_de_conta}"></td>
-            <td th:text="${conta.balanco}">Kz</td>
-            <td th:text="${conta.nome_do_titular}"></td>
-            <td th:text="${conta.iban}"></td>
-            <td th:text="${conta.pin}"></td>
-            <td th:text="${conta.movimentos}"></td>
-            <td th:text="${conta.servicos}"></td>
-        </tr>
-    </table>
+            <div class="card" >
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img
+                                src="https://bulma.io/assets/images/placeholders/1280x960.png"
+                                alt="Placeholder image"
+                        />
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img
+                                        src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairBigHair&accessoriesType=Blank&hairColor=Black&facialHairType=
+                                        Blank&clotheType=Overall&clotheColor=Pink&eyeType=Happy&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=DarkBrown/96x96.png"
+                                        alt="Placeholder image"
+                                />
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <div class="AdjustMov">
+                                <p> Nome   do Titular : </p>
+                                <p th:text="${conta.nome_do_titular}"></p>
+                            </div>
+                            <div class="AdjustMov">
+                                <p > ID : </p>
+                                <p  th:text="${conta.id}"></p>
+                            </div>
+                            <div  class="AdjustMov">
+                            <p > Numero de Conta : </p>
+                            <p  th:text="${conta.numero_de_conta}"></p>
+                            </div>
+                            <div class="AdjustMov">
+                            <p> Balanço : </p>
+                            <p th:text="${conta.balanco}" style="color:green"></p> KZ
+                            </div>
+                            <div class="AdjustMov">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
