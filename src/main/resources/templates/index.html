@@ -27,9 +27,9 @@
     </div>
 </div>
 
-<div align="center">
-    <div class="columns is-multiline is-centered"  >
-        <div class="column is-2" th:each="conta : ${contas}">
+<div class="container">
+    <div class="columns is-multiline"  >
+        <div class="column is-one-third" th:each="conta : ${contas}">
 
             <div class="card" >
 
@@ -82,8 +82,8 @@
 
                     </div>
                     <footer class="card-footer">
-                        <a th:href="@{/levantamento/{id} (id=${conta.id})}" class="card-footer-item">Levantamento</a>
-                        <a th:href="@{/deposito/{id} (id=${conta.id})}"  class="card-footer-item">Deposito</a>
+                        <a th:href="@{/levantamento/{id} (id=${conta.id})}" class="card-footer-item  button is-danger is-outlined" >Levantamento</a>
+                        <a th:href="@{/deposito/{id} (id=${conta.id})}"  class="card-footer-item button is-success is-outlined" >Deposito</a>
                     </footer>
                 </div>
             </div>
