@@ -1,6 +1,7 @@
 package ao.kwanzazap.fintech.Controller;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import ao.kwanzazap.fintech.Service.ContaServico;
 import ao.kwanzazap.fintech.Model.Conta;
@@ -67,6 +68,32 @@ public class ContaController
         return contaServico.levantamento(id, valor);
     }
 
+
+    public Optional<Conta> getConta (Long id ) {
+        return contaRepository.findById(id);
+    }
+
+    @RequestMapping(path = "/contas/{id}/depositoform"  , method = RequestMethod.POST)
+
+    public String deposito (Long id, double valor ){
+        Conta conta = getConta(id).orElseThrow(() -> new RuntimeException("Conta não encontrada"));
+        conta.setBalanco(conta.getBalanco() + valor );
+        contaRepository.save(conta);
+        return "index";
+    }
+
+    @RequestMapping(path = "/contas/{id}/leavantamentoform"  , method = RequestMethod.POST)
+
+    public String levantamento (Long id , double valor) {
+        Conta conta = getConta(id).orElseThrow(() -> new RuntimeException("Conta não encontrada"));
+        if (conta.getBalanco() < valor ){
+            throw new RuntimeException("Valores insuficientes");
+
+        }
+        conta.setBalanco(conta.getBalanco() - valor );
+        contaRepository.save(conta);
+        return "index";
+    }
 
 
     @ResponseBody
