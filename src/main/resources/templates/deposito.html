@@ -1,14 +1,12 @@
-<html xmlns:form="http://www.w3.org/1999/xhtml" lang="">
-<head>
-    <title>Deposito</title></head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-
+<html xmlns:th="http://www.thymeleaf.org" lang="">
 <body>
-<form action="/contas/11/deposito" method="post" >
-    <input type ="text" name="valor"/>
-    <button type="submit" >Submit2</button>
+
+<form action="/contas/11/depositoform" method="post">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id" >
+    <label for="valor">Valor:</label>
+    <input type="text" id="valor" name="valor" >
+    <input type="submit" value="Submit">
 </form>
-
-
 </body>
 </html>
