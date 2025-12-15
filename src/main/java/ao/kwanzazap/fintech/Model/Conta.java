@@ -24,6 +24,8 @@ public class Conta {
     private String nome_do_titular;
     private String iban;
     private Integer pin;
+    @Column(length = 512)
+    private String avatar;
     @Enumerated(EnumType.STRING)
     private Movimentos movimentos;
     @Enumerated(EnumType.STRING)

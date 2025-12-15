@@ -38,8 +38,7 @@
                         <div class="media-left">
                             <figure class="image is-48x48">
                                 <img
-                                        src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairBigHair&accessoriesType=Blank&hairColor=Black&facialHairType=
-                                        Blank&clotheType=Overall&clotheColor=Pink&eyeType=Happy&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=DarkBrown/96x96.png"
+                                        th:src="${conta.avatar}"
                                         alt="Placeholder image"
                                 />
                             </figure>
@@ -59,7 +58,7 @@
                             </div>
                             <div class="AdjustMov">
                             <p> Balanço : </p>
-                            <p th:text="${conta.balanco}" style="color:green"></p> KZ
+                            <p th:text="${conta.balanco}" style="color:green; font-weight: bold;"></p>KZ
                             </div>
                         </div>
                     </div>
