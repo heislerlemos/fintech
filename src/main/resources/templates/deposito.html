@@ -1,12 +1,34 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="">
-<body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/main.css">
 
-<form action="/contas/{id}/depositoform" method="post">
-    <label for="id">ID:</label>
-    <input type="text" id="id" name="id" placeholder="id" >
-    <label for="valor">Valor:</label>
-    <input type="text" id="valor" name="valor" >
-    <input type="submit" value="Submit">
-</form>
+
+</head>
+<body>
+<nav th:replace="~{navbar :: navbar}"></nav>
+
+<div class="columns is-centered">
+    <div class="column is-half">
+        <section class="hero is-large is-light">
+            <div class="hero-body">
+                <p class="title">Deposito</p>
+                <p class="subtitle">Insira o valor que quer depositar</p>
+                <p  class="subtitle">Balanço Atual :</p>
+
+                <form action="/contas/{id}/depositoform" method="post">
+                    <label class="label" for="id">ID:</label>
+                    <input  class="input is-dark is-large" type="text" id="id" name="id" placeholder="id do cliente" >
+                    <hr>
+                    <label class="label" for="valor">Valor:</label>
+                    <input  class="input is-dark is-large"  type="text" id="valor" name="valor" placeholder="Kwanzas" >
+                    <hr>
+                    <input  class="button is-dark is-large is-fullwidth" type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
 </body>
 </html>

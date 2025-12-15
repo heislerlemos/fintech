@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body th:fragment="navbar">
-<nav class="navbar" role="navigation" aria-label="main navigation" >
+<nav class="navbar " role="navigation" aria-label="main navigation" >
     <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
 
@@ -21,7 +21,7 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item">
+            <a   th:href="@{/}" class="navbar-item">
                 Kwanza Zap
             </a>
             <hr class="navbar-divider">
@@ -31,11 +31,11 @@
     <div class="navbar-end">
         <div class="navbar-item">
             <div class="buttons">
-                <a class="button is-primary">
-                    <strong>Se Cadastre</strong>
+                <a class="button is-warning is-outlined">
+                    <strong>Sign Up</strong>
                 </a>
-                <a class="button is-light">
-                    Faça Login
+                <a class="button is-info is-outlined">
+                    Login
                 </a>
             </div>
         </div>

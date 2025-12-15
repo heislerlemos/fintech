@@ -1,5 +1,11 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
 <body>
+<nav th:replace="~{navbar :: navbar}"></nav>
 
 <form action="/contas/{id}/leavantamentoform" method="post">
     <label for="id">ID:</label>
