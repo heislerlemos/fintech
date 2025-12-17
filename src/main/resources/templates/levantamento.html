@@ -3,16 +3,36 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/css/main.css">
+
+
 </head>
 <body>
 <nav th:replace="~{navbar :: navbar}"></nav>
 
-<form action="/contas/{id}/leavantamentoform" method="post">
-    <label for="id">ID:</label>
-    <input type="text" id="id" name="id" >
-    <label for="valor">Valor:</label>
-    <input type="text" id="valor" name="valor" >
-    <input type="submit" value="Submit">
-</form>
+<div class="columns is-centered">
+    <div class="column is-half">
+        <section class="hero is-large is-light">
+            <div class="hero-body">
+                <p class="title">Levantantamento</p>
+                <p class="subtitle">Insira o valor que quer depositar</p>
+                <p  class="subtitle">Balanço Atual :</p>
+                <form th:action="@{/levantamento/{id}(id=${conta1.id})}" th:object="${conta1}" method="post" >
+                    <label for="balanco"></label>
+                    <input  class="input is-dark is-large" type="text" th:value="${conta1.balanco}" id="balanco" readonly>
+
+                </form>
+
+                <form action="/contas/{id}/leavantamentoform"  th:object="${conta1}" method="post">
+                    <input  class="input is-dark is-large"  id="id" th:value="${conta1.id}"  name="id" placeholder="id do cliente"   type="hidden">
+                    <hr>
+                    <label class="label" for="valor">Valor:</label>
+                    <input  class="input is-dark is-large"  type="text" id="valor" name="valor" placeholder="Kwanzas" >
+                    <hr>
+                    <input  class="button is-dark is-large is-fullwidth" type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
 </body>
 </html>

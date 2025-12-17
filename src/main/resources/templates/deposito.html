@@ -23,8 +23,7 @@
                 </form>
 
                 <form action="/contas/{id}/depositoform"  th:object="${conta1}" method="post">
-                    <label class="label" for="id">ID:</label>
-                    <input  class="input is-dark is-large" type="text" id="id" th:value="${conta1.id}"  name="id" placeholder="id do cliente" >
+                    <input  class="input is-dark is-large"  id="id" th:value="${conta1.id}"  name="id" placeholder="id do cliente"   type="hidden">
                     <hr>
                     <label class="label" for="valor">Valor:</label>
                     <input  class="input is-dark is-large"  type="text" id="valor" name="valor" placeholder="Kwanzas" >
