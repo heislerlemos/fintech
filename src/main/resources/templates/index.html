@@ -17,7 +17,8 @@
             <br>
             <br>
             <div class="hero-body " align="center" >
-                <img th:src="@{/images/logo.jpeg}" width="220" >
+                <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
+                <dotlottie-wc src="https://lottie.host/8bf4453c-5807-4f98-a89d-797dcd43990b/NCeUJNM4nX.lottie" style="width: 500px;height: 500px" autoplay loop></dotlottie-wc>
                 <p class="title"> Fintech - Kwanza zap  <p/>
                 <p class="subtitle">
                     Seja bem-vindo(a)! Na Kwanza Zap, você encontra as melhores soluções financeiras.  Confere as nossas ofertas especiais de boas-vindas!
@@ -81,8 +82,8 @@
 
                     </div>
                     <footer class="card-footer">
-                        <a th:href="@{/levantamento/{id} (id=${conta.id})}" class="card-footer-item  button is-danger is-outlined" >Levantamento</a>
-                        <a th:href="@{/deposito/{id} (id=${conta.id})}"  class="card-footer-item button is-success is-outlined" >Deposito</a>
+                        <a th:href="@{/levantamento/{id} (id=${conta.id})}" class="card-footer-item  button is-danger is-outlined is-large" >Levantamento</a>
+                        <a th:href="@{/deposito/{id} (id=${conta.id})}"  class="card-footer-item button is-success is-outlined is-large" >Deposito</a>
                     </footer>
                 </div>
             </div>

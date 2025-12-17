@@ -11,9 +11,13 @@
 
 <div class="columns is-centered">
     <div class="column is-half">
-        <section class="hero is-large is-light">
-            <div class="hero-body">
+        <section class="hero">
+            <div class="hero-body is-center">
                 <p class="title">Deposito</p>
+                <div align="center">
+                    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
+                    <dotlottie-wc src="https://lottie.host/0a5765c9-bd17-4ea5-8a02-b558ff95661b/crW5AwuhR4.lottie" style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
+                </div>
                 <p class="subtitle">Insira o valor que quer depositar</p>
                 <p  class="subtitle">Balanço Atual :</p>
                 <form th:action="@{/deposito/{id}(id=${conta1.id})}" th:object="${conta1}" method="post" >
@@ -28,9 +32,11 @@
                     <label class="label" for="valor">Valor:</label>
                     <input  class="input is-dark is-large"  type="text" id="valor" name="valor" placeholder="Kwanzas" >
                     <hr>
-                    <input  class="button is-dark is-large is-fullwidth" type="submit" value="Submit">
+                    <input  class="button is-dark is-large is-fullwidth" type="submit" value="Publicar">
                 </form>
+                <a th:href="@{/}"  class="button is-large is-fullwidth">Voltar</a>
             </div>
+
         </section>
     </div>
 </div>
