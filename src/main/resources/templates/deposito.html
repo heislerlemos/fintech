@@ -16,6 +16,11 @@
                 <p class="title">Deposito</p>
                 <p class="subtitle">Insira o valor que quer depositar</p>
                 <p  class="subtitle">Balanço Atual :</p>
+                <form th:action="@{/deposito/{id}(id=${conta1.id})}" th:object="${conta1}" method="post" >
+                    <label for="balanco"></label>
+                    <input type="text" th:value="${conta1.balanco}" id="balanco" readonly>
+
+                </form>
 
                 <form action="/contas/{id}/depositoform" method="post">
                     <label class="label" for="id">ID:</label>

@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -13,29 +15,36 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class DepositoController {
     @Autowired
     private ContaRepository contaRepository;
-/*
-    @RequestMapping("/deposito/{id}")
 
-    public String  verdeposito(Model model , @RequestParam long id){
-        Conta conta = contaRepository.findById(id).orElse(null);
+    @GetMapping("/deposito/{id}")
 
-        Conta conta1 = new Conta();
-        conta1.setBalanco(conta.getBalanco());
+    public String  verdeposito(Model model , @PathVariable long id){
 
-        model.addAttribute("conta", conta);
-        model.addAttribute("conta1", conta1);
+        try {
+            Conta conta = contaRepository.findById(id).get();
+            model.addAttribute("conta", conta);
 
+            Conta conta1 = new Conta();
+            conta1.setBalanco(conta.getBalanco());
+
+            model.addAttribute("conta1", conta1);
+
+        } catch (Exception e){
+            System.out.println("Erro:"+ e.getMessage());
+            return "redirect:index";
+        }
         return  "deposito";
 
     }
 
-*/
-
-
+/*
     @RequestMapping("/deposito/{id}")
 
     public String  verdeposito(){
         return  "deposito";
 
     }
+*/
+
+
 }
