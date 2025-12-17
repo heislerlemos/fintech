@@ -18,13 +18,13 @@
                 <p  class="subtitle">Balanço Atual :</p>
                 <form th:action="@{/deposito/{id}(id=${conta1.id})}" th:object="${conta1}" method="post" >
                     <label for="balanco"></label>
-                    <input type="text" th:value="${conta1.balanco}" id="balanco" readonly>
+                    <input  class="input is-dark is-large" type="text" th:value="${conta1.balanco}" id="balanco" readonly>
 
                 </form>
 
-                <form action="/contas/{id}/depositoform" method="post">
+                <form action="/contas/{id}/depositoform"  th:object="${conta1}" method="post">
                     <label class="label" for="id">ID:</label>
-                    <input  class="input is-dark is-large" type="text" id="id" name="id" placeholder="id do cliente" >
+                    <input  class="input is-dark is-large" type="text" id="id" th:value="${conta1.id}"  name="id" placeholder="id do cliente" >
                     <hr>
                     <label class="label" for="valor">Valor:</label>
                     <input  class="input is-dark is-large"  type="text" id="valor" name="valor" placeholder="Kwanzas" >

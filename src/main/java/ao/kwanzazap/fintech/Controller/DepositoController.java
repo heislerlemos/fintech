@@ -25,6 +25,7 @@ public class DepositoController {
             model.addAttribute("conta", conta);
 
             Conta conta1 = new Conta();
+            conta1.setId(conta.getId());
             conta1.setBalanco(conta.getBalanco());
 
             model.addAttribute("conta1", conta1);
