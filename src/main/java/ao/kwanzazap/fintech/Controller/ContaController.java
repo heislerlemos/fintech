@@ -34,12 +34,12 @@ public class ContaController
     // JSON VIEW
     @ResponseBody
     @RequestMapping("/contas")
-    public List<Conta> contas (){
+    public List<Conta> contasj (){
         return contaRepository.findAll();
     }
 
-   @ResponseBody
-   @GetMapping("/contas/{id}")
+    @ResponseBody
+    @GetMapping("/contas/{id}")
     public Conta getAccount(@PathVariable Long id) {
         return contaServico.getConta(id).orElseThrow(() -> new RuntimeException("Conta não encontrada"));
     }
@@ -79,7 +79,7 @@ public class ContaController
         Conta conta = getConta(id).orElseThrow(() -> new RuntimeException("Conta não encontrada"));
         conta.setBalanco(conta.getBalanco() + valor );
         contaRepository.save(conta);
-        return "index";
+        return "redirect:/";
     }
 
     @RequestMapping(path = "/contas/{id}/leavantamentoform"  , method = RequestMethod.POST)
@@ -92,7 +92,7 @@ public class ContaController
         }
         conta.setBalanco(conta.getBalanco() - valor );
         contaRepository.save(conta);
-        return "index";
+        return "redirect:/";
     }
 
 
