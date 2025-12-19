@@ -9,16 +9,33 @@
 </head>
 <body>
 <nav th:replace="~{navbar :: navbar}"></nav>
+    <br>
+    <div class="columns is-centered ">
+        <div class="column is-half">
+            <section class="hero is-light">
+                <div class="hero-body" align="center">
 
-<section class="hero is-info">
-    <div class="hero-body" align="center">
+                    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
+                    <dotlottie-wc src="https://lottie.host/87457bf6-3d46-4a08-b335-a0f909d41a56/pKFS8GUxbB.lottie" style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
+                    <p class="title">Transferencia</p>
+                    <p class="subtitle">Faça sua transferencia de valor </p>
+                    <form action="/contas/transferencia"  method="post">
+                        <label class="label" for="id1">ID1:</label>
+                        <input  class="input is-dark is-large"  id="id1"  name="id1" placeholder="id da conta 1 "  >
+                        <hr>
+                        <label class="label" for="id2">ID2:</label>
+                        <input  class="input is-dark is-large"  id="id2"  name="id2" placeholder="id da conta 2" >
+                        <hr>
+                        <label class="label" for="valor">Valor:</label>
+                        <input  class="input is-dark is-large"  type="text" id="valor" name="valor" placeholder="Kwanzas" >
+                        <hr>
+                        <input  class="button is-dark is-large is-fullwidth" type="submit" value="Publicar">
+                    </form>
+                    <a th:href="@{/}"  class="button is-large is-fullwidth">Voltar</a>
 
-        <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
-        <dotlottie-wc src="https://lottie.host/87457bf6-3d46-4a08-b335-a0f909d41a56/pKFS8GUxbB.lottie" style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
-        <p class="title">Transferencia</p>
-        <p class="subtitle">Faça sua transferencia de valor </p>
+                </div>
+            </section>
+        </div>
     </div>
-</section>
-
-</body>
+    </body>
 </html>
