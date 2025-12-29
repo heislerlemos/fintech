@@ -1,4 +1,3 @@
-Aqui tens uma proposta de um ficheiro `README.md` profissional, bem estruturado e visualmente apelativo para o projeto **KwanzaZap MVP**, baseado no documento de visão fornecido.
 
 ---
 
