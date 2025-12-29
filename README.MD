@@ -1,1 +1,1 @@
-Fintech app 
+     FINTECH
