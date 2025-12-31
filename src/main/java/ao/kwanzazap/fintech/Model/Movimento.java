@@ -24,6 +24,7 @@ public class Movimento {
     private Integer numero_de_conta;
     private Date data;
     private Double  balanco;
-    private String movimento;
+    private Double movimento;
+    private String tipo;
 
 }

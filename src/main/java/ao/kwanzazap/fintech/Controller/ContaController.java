@@ -91,9 +91,9 @@ public class ContaController
         conta.setBalanco(conta.getBalanco() + valor );
         contaRepository.save(conta);
         Movimento movimento = new Movimento();
-        movimento.setId(conta.getId());
         movimento.setBalanco(conta.getBalanco());
-        movimento.setMovimento("Deposito");
+        movimento.setMovimento(valor);
+        movimento.setTipo("Deposito ++");
         movimento.setData(new Date());
         movimento.setNumero_de_conta(conta.getNumero_de_conta());
 
