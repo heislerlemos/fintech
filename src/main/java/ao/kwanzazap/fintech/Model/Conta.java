@@ -18,7 +18,7 @@ import lombok.Setter;
 public class Conta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private Integer numero_de_conta;
     private Double  balanco;
     private String nome_do_titular;
@@ -26,10 +26,7 @@ public class Conta {
     private Integer pin;
     @Column(length = 512)
     private String avatar;
-    @Enumerated(EnumType.STRING)
-    private Movimentos movimentos;
-    @Enumerated(EnumType.STRING)
-    private Servicos servicos;
+
 
 
 }

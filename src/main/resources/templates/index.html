@@ -70,14 +70,10 @@
 
                         </div>
                         <div class="AdjustMov">
-                            <p> Movimentos: </p>
-                            <p th:text="${conta.movimentos}"></p>
+                            <p>Verificar:</p>
+                            <a th:href="@{/movimento/{id} (id=${conta.id})}" >Movimentos</a>
                         </div>
 
-                        <div class="AdjustMov">
-                            <p> Serviços : </p>
-                            <p  th:text="${conta.servicos}"></p>
-                        </div>
 
                     </div>
                     <footer class="card-footer">

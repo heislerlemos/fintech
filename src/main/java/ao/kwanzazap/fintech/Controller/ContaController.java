@@ -1,11 +1,17 @@
 package ao.kwanzazap.fintech.Controller;
+import java.time.Instant;
+import java.time.LocalDate;
+
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
+import ao.kwanzazap.fintech.Interface.MovimentoRepository;
+import ao.kwanzazap.fintech.Model.Movimento;
 import ao.kwanzazap.fintech.Service.ContaServico;
 import ao.kwanzazap.fintech.Model.Conta;
 import ao.kwanzazap.fintech.Interface.ContaRepository;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
@@ -19,10 +25,15 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 public class ContaController
 {
+    @CreationTimestamp
+    private Instant createdOn;
+
     @Autowired
     private ContaRepository contaRepository;
     @Autowired
     private ContaServico contaServico;
+    @Autowired
+    private MovimentoRepository movimentoRepository;
 
     // HTML TEMPLATE VIEW
     @GetMapping("/")
@@ -79,6 +90,15 @@ public class ContaController
         Conta conta = getConta(id).orElseThrow(() -> new RuntimeException("Conta não encontrada"));
         conta.setBalanco(conta.getBalanco() + valor );
         contaRepository.save(conta);
+        Movimento movimento = new Movimento();
+        movimento.setId(conta.getId());
+        movimento.setBalanco(conta.getBalanco());
+        movimento.setMovimento("Deposito");
+        movimento.setData(new Date());
+        movimento.setNumero_de_conta(conta.getNumero_de_conta());
+
+
+        movimentoRepository.save(movimento);
         return "redirect:/";
     }
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Movimentos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body >
+<nav th:replace="~{navbar :: navbar}"></nav>
+<section class="hero is-link">
+    <div class="hero-body">
+        <p class="title">Movimentos</p>
+        <p class="subtitle">Visualizar movimentos do cliente</p>
+    </div>
+</section>
+<br>
+<div class="container ">
+    <table class="table is-center" style="  margin-left: auto; margin-right: auto;">
+        <thead>
+        <tr>
+            <th>Data</th>
+            <th>Tobias</th>
+            <th>Linus</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>16</td>
+            <td>14</td>
+            <td>10</td>
+        </tr>
+    </table>
+    <a th:href="@{/}"  class="button is-large is-fullwidth">Voltar</a>
+</div>
+</body>
+</html>

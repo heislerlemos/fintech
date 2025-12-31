@@ -20,7 +20,6 @@ public class LevantamentoController {
     @GetMapping("/levantamento/{id}")
 
     public String  verlevantamento(Model model , @PathVariable long id){
-
         try {
             Conta conta = contaRepository.findById(id).get();
             model.addAttribute("conta", conta);
