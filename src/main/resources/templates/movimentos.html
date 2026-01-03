@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html  xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>Movimentos</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -16,18 +17,39 @@
 </section>
 <br>
 <div class="container ">
+    <tbody>
+    <tr th:each="prod: ${movimento1}">
+        <td th:text="${prod.id}"></td>
+        <td th:text="${prod.data}"></td>
+        <td th:text="${prod.balanco}"></td>
+        <td th:text="${prod.tipo}"></td>
+        <td th:text="${prod.tipo}"></td>
+
+
+
+    </tr>
+    </tbody>
+
+    <form th:action="@{/movimento/{id}(id=${movimento1.id})}" th:object="${movimento1}" method="post" >
+        <label for="balanco"></label>
+        <input  class="input is-dark is-large" type="text" th:value="${movimento1.id}" id="balanco" readonly>
+
+    </form>
+
+
+
     <table class="table is-center" style="  margin-left: auto; margin-right: auto;">
         <thead>
         <tr>
+            <th>Balanco</th>
             <th>Data</th>
-            <th>Tobias</th>
-            <th>Linus</th>
+            <th>Conta_ID</th>
         </tr>
         </thead>
         <tr>
-            <td>16</td>
-            <td>14</td>
-            <td>10</td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
         </tr>
     </table>
     <a th:href="@{/}"  class="button is-large is-fullwidth">Voltar</a>

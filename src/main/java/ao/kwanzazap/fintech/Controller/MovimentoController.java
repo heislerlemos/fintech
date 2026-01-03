@@ -1,25 +1,14 @@
 package ao.kwanzazap.fintech.Controller;
-import ao.kwanzazap.fintech.Controller.ContaController;
-
-import java.sql.Date;
-import java.time.LocalDate;
-
-import ao.kwanzazap.fintech.Interface.ContaRepository;
 import ao.kwanzazap.fintech.Interface.MovimentoRepository;
-import ao.kwanzazap.fintech.Model.Conta;
 import ao.kwanzazap.fintech.Model.Movimento;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.sql.Timestamp;
-import java.time.LocalTime;
+import java.lang.reflect.Array;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Controller
 
@@ -27,26 +16,30 @@ public class MovimentoController {
     @Autowired
     private MovimentoRepository movimentoRepository;
 
-    @Autowired
-    private ContaRepository contaRepository;
 
     @GetMapping("/movimento/{id}")
 
-    public String vermovimentos () {
-        return "movimentos";
-    }
+    public String vermovimentos(Model model , @PathVariable long id){
 
+        try {
+            Movimento movimento = movimentoRepository.findById(id).get();
+            model.addAttribute("movimento", movimento);
 
-    //@RequestMapping(path = "/contas/{id}/depositoform"  , method = RequestMethod.POST)
+            Movimento movimento1 = new Movimento();
+            movimento1.setId(movimento.getId());
+            movimento1.setNumero_de_conta(movimento.getNumero_de_conta());
+            movimento1.setBalanco(movimento.getBalanco());
+            movimento1.setData(movimento.getData());
+            movimento1.setTipo(movimento.getTipo());
+            movimento1.setConta(movimento.getConta());
 
-    public String guardarmovimentosdeposito(Model model , @PathVariable long id){
+            model.addAttribute("movimento1", movimento1);
 
+        } catch (Exception e){
+            System.out.println("Error");
+        }
 
-        Movimento movimento = new Movimento();
-        LocalDate Date3 = LocalDate.now();
-        movimento.setData(Date.valueOf(Date3));
-        movimentoRepository.save(movimento);
-        return  "deposito";
+        return  "movimentos";
     }
 
 

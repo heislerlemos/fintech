@@ -30,7 +30,6 @@ public class Conta {
     private Integer pin;
     @Column(length = 512)
     private String avatar;
-
     @OneToMany(mappedBy = "conta")
     private List<Movimento>  movimentos ;
 
