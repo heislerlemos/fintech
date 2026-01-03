@@ -6,12 +6,16 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @ToString
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "conta")
 
 
 
@@ -27,6 +31,7 @@ public class Conta {
     @Column(length = 512)
     private String avatar;
 
-
+    @OneToMany(mappedBy = "conta")
+    private List<Movimento>  movimentos ;
 
 }
