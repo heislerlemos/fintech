@@ -93,7 +93,7 @@ public class ContaController
         Movimento movimento = new Movimento();
         movimento.setBalanco(conta.getBalanco());
         movimento.setMovimento(valor);
-        movimento.setTipo("Deposito ++");
+        movimento.setTipo("+");
         movimento.setData(new Date());
         movimento.setConta(conta);
         movimento.setNumero_de_conta(conta.getNumero_de_conta());

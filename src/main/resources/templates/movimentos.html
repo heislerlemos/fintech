@@ -17,39 +17,18 @@
 </section>
 <br>
 <div class="container ">
-    <tbody>
-    <tr th:each="prod: ${movimento1}">
-        <td th:text="${prod.id}"></td>
-        <td th:text="${prod.data}"></td>
-        <td th:text="${prod.balanco}"></td>
-        <td th:text="${prod.tipo}"></td>
-        <td th:text="${prod.tipo}"></td>
-
-
-
-    </tr>
-    </tbody>
-
-    <form th:action="@{/movimento/{id}(id=${movimento1.id})}" th:object="${movimento1}" method="post" >
-        <label for="balanco"></label>
-        <input  class="input is-dark is-large" type="text" th:value="${movimento1.id}" id="balanco" readonly>
-
-    </form>
-
-
-
-    <table class="table is-center" style="  margin-left: auto; margin-right: auto;">
-        <thead>
-        <tr>
-            <th>Balanco</th>
+    <table class="table" style="margin-left: auto;margin-right: auto;" >
+            <th>ID</th>
             <th>Data</th>
-            <th>Conta_ID</th>
-        </tr>
-        </thead>
-        <tr>
-            <td ></td>
-            <td ></td>
-            <td ></td>
+            <th>Movimento</th>
+            <th>Balanço</th>
+            <th>Tipo</th>
+        <tr th:each="movimentoh: ${movimentos}">
+        <td th:text="${movimentoh.id}"></td>
+            <td th:text="${movimentoh.data}"></td>
+            <td th:text="${movimentoh.movimento}"></td>
+            <td th:text="${movimentoh.balanco}"></td>
+            <td th:text="${movimentoh.tipo}"></td>
         </tr>
     </table>
     <a th:href="@{/}"  class="button is-large is-fullwidth">Voltar</a>
