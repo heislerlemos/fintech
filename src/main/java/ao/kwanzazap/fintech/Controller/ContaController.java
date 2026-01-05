@@ -92,6 +92,7 @@ public class ContaController
         contaRepository.save(conta);
         Movimento movimento = new Movimento();
         movimento.setBalanco(conta.getBalanco());
+
         movimento.setMovimento(valor);
         movimento.setTipo("+");
         movimento.setData(new Date());

@@ -20,7 +20,7 @@
                 <p  class="subtitle">Balanço Atual :</p>
                 <form th:action="@{/levantamento/{id}(id=${conta1.id})}" th:object="${conta1}" method="post" >
                     <label for="balanco"></label>
-                    <input  class="input is-dark is-large" type="text" th:value="${conta1.balanco}" id="balanco" readonly>
+                    <input  class="input is-dark is-large" type="text" th:value="${#numbers.formatCurrency(conta1.balanco)}" id="balanco" readonly>
 
                 </form>
 

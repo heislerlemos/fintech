@@ -26,8 +26,8 @@
         <tr th:each="movimentoh: ${movimentos}">
         <td th:text="${movimentoh.id}"></td>
             <td th:text="${movimentoh.data}"></td>
-            <td th:text="${movimentoh.movimento}"></td>
-            <td th:text="${movimentoh.balanco}"></td>
+            <td th:text="${#numbers.formatCurrency(movimentoh.movimento)}"></td>
+            <td th:text="${#numbers.formatCurrency(movimentoh.balanco)}"></td>
             <td th:text="${movimentoh.tipo}"></td>
         </tr>
     </table>

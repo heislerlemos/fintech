@@ -58,7 +58,7 @@
                             </div>
                             <div class="AdjustMov">
                                 <p> Balanço : </p>
-                                <p th:text="${conta.balanco}" style="color:green; font-weight: bold;"></p>KZ
+                                <p th:text="${#numbers.formatCurrency(conta.balanco)}" style="color:green; font-weight: bold;"></p>KZ
                             </div>
                         </div>
                     </div>
