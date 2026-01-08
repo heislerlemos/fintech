@@ -36,14 +36,5 @@ public class DepositoController {
 
     }
 
-/*
-    @RequestMapping("/deposito/{id}")
-
-    public String  verdeposito(){
-        return  "deposito";
-
-    }
-*/
-
 
 }
