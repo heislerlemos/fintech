@@ -1,3 +1,3 @@
 BASLER FINTECH
 
-Aplicação de deposito levantamento e transferencia entre contas bancarias.
+Aplicação de depósito levantamento e transferencia entre contas bancarias.
